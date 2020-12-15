@@ -21,4 +21,22 @@ module.exports = {
 
     res.status(200).send(newUser);
   },
+
+  login: async (req, res) => {
+    const db = req.app.get("db");
+
+    const { email, password } = req.body;
+
+    const [existingUser] = await db.get_user_by_email([email]);
+
+    if (!existingUser) {
+      return res.status(404).send("incorrect password");
+    }
+
+    delete existingUser.hash;
+
+    req.session.user = existingUser;
+
+    res.status(200).send(existingUser);
+  },
 };
