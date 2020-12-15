@@ -1,8 +1,9 @@
 require("dotenv").config();
 const express = require("express"),
+const express = require("express-session")
+const massive = require("massive");
   userCtrl = require("./controllers/user"),
   postCtrl = require("./controllers/posts");
-const massive = require("massive");
 
 const { CONNECTION_STRING, SERVER_PORT } = process.env;
 
@@ -31,7 +32,6 @@ massive({
 }).then((dbInstance) => {
   app.set("db", dbInstance);
   console.log("DB Ready Nya~");
-
   app.listen(SERVER_PORT, () =>
     console.log(`Running on ${SERVER_PORT} Master Nya~`)
   );
