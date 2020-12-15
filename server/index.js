@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express"),
 const session = require("express-session")
 const massive = require("massive");
-  userCtrl = require("./controllers/user"),
-  postCtrl = require("./controllers/posts");
+userCtrl = require("./controllers/user"),
+postCtrl = require("./controllers/posts");
 
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
