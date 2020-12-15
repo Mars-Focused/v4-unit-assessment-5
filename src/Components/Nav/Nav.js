@@ -9,7 +9,7 @@ import "./Nav.css";
 class Nav extends Component {
   constructor(props) {
     super(props);
-//Don't write code you can't test... well I've definitley broken that rule at this point
+    //Don't write code you can't test... well I've definitely broken that rule at this point
     this.logout = this.logout.bind(this);
     this.getUser = this.getUser.bind(this);
   }
