@@ -1,9 +1,9 @@
 require("dotenv").config();
 const express = require("express"),
-const session = require("express-session")
+  session = require("express-session");
 const massive = require("massive");
-userCtrl = require("./controllers/user"),
-postCtrl = require("./controllers/posts");
+(userCtrl = require("./controllers/user")),
+  (postCtrl = require("./controllers/posts"));
 
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
 
@@ -15,7 +15,7 @@ app.use(
     secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7}
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 },
   })
 );
 
