@@ -1,7 +1,7 @@
+const massive = require("massive");
 require("dotenv").config();
 const express = require("express"),
   session = require("express-session");
-const massive = require("massive");
 (userCtrl = require("./controllers/user")),
   (postCtrl = require("./controllers/posts"));
 
